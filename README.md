@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## SEE Part 2 (Businesses) Blueprint App
+
+This is a Next.js application that organizes a 2026-focused knowledge base for IRS Enrolled Agent SEE Part 2 (Businesses).
+
+It includes:
+- Source map with primary IRS/Prometric references and secondary blueprint interpreters
+- Official domain structure and weighting overview
+- Topic-level domain breakdown
+- 50-page report outline (sections I-VI)
+- Question-set design matrix for Set A / Set B / Set C
+
+## Status Check
+
+- App build: complete
+- Main report UI: complete
+- Source map and blueprint content: complete
+- Extended documentation (`manual`, `tutorial`, `quickstarter`): now included
+- Marketing copy pack (social/blog/newsletter/email): now included
+
+## Documentation Index
+
+- `docs/QUICKSTARTER.md` - fastest path to run and customize
+- `docs/MANUAL.md` - full operating and maintenance guide
+- `docs/TUTORIAL.md` - step-by-step learning walkthrough
+- `docs/MARKETING_ADS.md` - ad copy by platform
+- `docs/NEWSLETTER_EMAIL_TEMPLATES.md` - newsletter + direct email templates
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Main files:
+- `src/app/page.tsx` - UI and section rendering
+- `src/lib/seePart2Data.ts` - structured source/outline/matrix data
+- `tasks/todo.md` - project checklist and review notes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Build
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Lint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+The content is structured to mirror the official Part 2 blueprint while remaining readable as a practical study/report foundation.
