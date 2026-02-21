@@ -118,6 +118,14 @@ export default function Home() {
                 <span>Set 2 — 100 Q&amp;A</span>
                 <span className="ml-auto text-violet-400/70">→</span>
               </Link>
+              <Link
+                href="/questions3"
+                className="flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-emerald-500/10 px-3 py-2.5 text-sm font-semibold text-emerald-200 transition hover:bg-emerald-500/20 hover:border-emerald-400/60"
+              >
+                <span className="text-base">📝</span>
+                <span>Set 3 — 100 Q&amp;A</span>
+                <span className="ml-auto text-emerald-400/70">→</span>
+              </Link>
             </nav>
           </div>
         </aside>
