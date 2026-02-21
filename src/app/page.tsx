@@ -101,14 +101,22 @@ export default function Home() {
               {/* Divider */}
               <div className="my-4 border-t border-white/10" />
 
-              {/* Practice questions button */}
+              {/* Practice questions buttons */}
               <Link
                 href="/questions"
                 className="flex items-center gap-2 rounded-xl border border-amber-400/40 bg-amber-500/10 px-3 py-2.5 text-sm font-semibold text-amber-200 transition hover:bg-amber-500/20 hover:border-amber-400/60"
               >
                 <span className="text-base">📝</span>
-                <span>100 Practice Q&amp;A</span>
+                <span>Set 1 — 100 Q&amp;A</span>
                 <span className="ml-auto text-amber-400/70">→</span>
+              </Link>
+              <Link
+                href="/questions2"
+                className="flex items-center gap-2 rounded-xl border border-violet-400/40 bg-violet-500/10 px-3 py-2.5 text-sm font-semibold text-violet-200 transition hover:bg-violet-500/20 hover:border-violet-400/60"
+              >
+                <span className="text-base">📝</span>
+                <span>Set 2 — 100 Q&amp;A</span>
+                <span className="ml-auto text-violet-400/70">→</span>
               </Link>
             </nav>
           </div>
