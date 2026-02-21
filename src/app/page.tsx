@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import {
   domainSummary,
   domainTopics,
@@ -118,7 +119,15 @@ export default function Home() {
               design. Use the left sidebar to jump quickly between every
               subsection.
             </p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <div className="mt-6 mb-2">
+              <Link
+                href="/questions"
+                className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-500/15 px-5 py-2.5 text-sm font-semibold text-cyan-200 transition hover:bg-cyan-500/25"
+              >
+                📝 Practice — 100 Q&amp;A with Explanations →
+              </Link>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
               <div className="rounded-xl border border-cyan-300/20 bg-slate-950/40 p-4">
                 <p className="text-xs text-cyan-200">Exam Size</p>
                 <p className="mt-1 text-2xl font-bold">100 Q</p>
