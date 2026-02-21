@@ -12,7 +12,7 @@ import {
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("hero");
-  const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/";
+  const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/henrynkoh/tax-ea-part2";
 
   const primarySources = sourceEntries.filter(
     (entry) => entry.group === "Primary IRS / Exam Structure",
