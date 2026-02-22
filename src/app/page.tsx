@@ -150,6 +150,14 @@ export default function Home() {
                 <span>Set 6 — 100 Q&amp;A</span>
                 <span className="ml-auto text-indigo-400/70">→</span>
               </Link>
+              <Link
+                href="/questions7"
+                className="flex items-center gap-2 rounded-xl border border-sky-400/40 bg-sky-500/10 px-3 py-2.5 text-sm font-semibold text-sky-200 transition hover:bg-sky-500/20 hover:border-sky-400/60"
+              >
+                <span className="text-base">📝</span>
+                <span>Set 7 — 100 Q&amp;A</span>
+                <span className="ml-auto text-sky-400/70">→</span>
+              </Link>
             </nav>
           </div>
         </aside>
