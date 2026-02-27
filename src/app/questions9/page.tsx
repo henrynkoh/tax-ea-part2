@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { questions7 } from "@/lib/questions7";
+import { questions9 } from "@/lib/questions9";
 import type { Domain, Choice } from "@/lib/questions";
 
 const DOMAIN_COLORS: Record<Domain, { badge: string }> = {
@@ -21,7 +21,7 @@ const DIFF_COLORS = {
 const CHOICE_LABELS: Choice[] = ["A", "B", "C", "D"];
 type Filter = "All" | Domain;
 
-export default function Questions7Page() {
+export default function Questions9Page() {
   const [filter, setFilter]       = useState<Filter>("All");
   const [mode, setMode]           = useState<"quiz" | "study">("quiz");
   const [quizIndex, setQuizIndex] = useState(0);
@@ -32,7 +32,7 @@ export default function Questions7Page() {
   const [studyOpen, setStudyOpen] = useState<Record<number, boolean>>({});
 
   const filtered = useMemo(
-    () => filter === "All" ? questions7 : questions7.filter((q) => q.domain === filter),
+    () => filter === "All" ? questions9 : questions9.filter((q) => q.domain === filter),
     [filter],
   );
   const current = filtered[quizIndex];
@@ -64,16 +64,16 @@ export default function Questions7Page() {
       <header className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-3 px-4 py-3">
           <Link href="/" className="mr-2 rounded-lg border border-white/10 px-3 py-1.5 text-xs text-slate-300 transition hover:bg-slate-800">← Blueprint</Link>
-          {[1,2,3,4,5,6].map((n) => (
+          {[1,2,3,4,5,6,7,8].map((n) => (
             <Link key={n} href={n === 1 ? "/questions" : `/questions${n}`} className="rounded-lg border border-white/10 px-3 py-1.5 text-xs text-slate-300 transition hover:bg-slate-800">Set {n}</Link>
           ))}
-          <Link href="/questions8" className="rounded-lg border border-white/10 px-3 py-1.5 text-xs text-slate-300 transition hover:bg-slate-800">Set 8</Link>
-          <span className="text-sm font-semibold text-slate-100">SEE Part 2 — Set 7: 100 Practice Questions</span>
+          <Link href="/questions10" className="rounded-lg border border-white/10 px-3 py-1.5 text-xs text-slate-300 transition hover:bg-slate-800">Set 10</Link>
+          <span className="text-sm font-semibold text-slate-100">SEE Part 2 — Set 9: 100 Practice Questions</span>
           <div className="ml-auto flex items-center gap-2">
             <div className="flex rounded-lg border border-white/10 overflow-hidden text-xs font-medium">
               {(["quiz","study"] as const).map((m) => (
                 <button key={m} onClick={() => handleMode(m)}
-                  className={`px-3 py-1.5 capitalize transition ${mode===m ? "bg-sky-500/25 text-sky-200" : "text-slate-400 hover:bg-slate-800"}`}>
+                  className={`px-3 py-1.5 capitalize transition ${mode===m ? "bg-orange-500/25 text-orange-200" : "text-slate-400 hover:bg-slate-800"}`}>
                   {m === "quiz" ? "Quiz Mode" : "Study Mode"}
                 </button>
               ))}
@@ -89,8 +89,8 @@ export default function Questions7Page() {
         <div className="mx-auto flex max-w-5xl flex-wrap gap-2 px-4 pb-3">
           {(["All","Domain 1","Domain 2","Domain 3","Cross-Domain"] as Filter[]).map((f) => (
             <button key={f} onClick={() => handleFilter(f)}
-              className={`rounded-full border px-3 py-1 text-xs font-medium transition ${filter===f ? "border-sky-400/60 bg-sky-500/20 text-sky-200" : "border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"}`}>
-              {f} <span className="opacity-60">({f==="All" ? questions7.length : questions7.filter((q)=>q.domain===f).length})</span>
+              className={`rounded-full border px-3 py-1 text-xs font-medium transition ${filter===f ? "border-orange-400/60 bg-orange-500/20 text-orange-200" : "border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"}`}>
+              {f} <span className="opacity-60">({f==="All" ? questions9.length : questions9.filter((q)=>q.domain===f).length})</span>
             </button>
           ))}
         </div>
@@ -102,7 +102,7 @@ export default function Questions7Page() {
             <div className="flex items-center gap-3 text-xs text-slate-400">
               <span>Question {quizIndex+1} of {filtered.length}</span>
               <div className="flex-1 h-1.5 rounded-full bg-slate-800 overflow-hidden">
-                <div className="h-full rounded-full bg-sky-500 transition-all" style={{width:`${((quizIndex+1)/filtered.length)*100}%`}} />
+                <div className="h-full rounded-full bg-orange-500 transition-all" style={{width:`${((quizIndex+1)/filtered.length)*100}%`}} />
               </div>
             </div>
             <div className="rounded-2xl border border-white/10 bg-slate-900 p-6 shadow-xl">
@@ -120,7 +120,7 @@ export default function Questions7Page() {
                     if (isCorr) style = "border-emerald-400/60 bg-emerald-500/15 text-emerald-100";
                     else if (isSel) style = "border-red-400/60 bg-red-500/15 text-red-200";
                     else style = "border-white/5 bg-slate-800/30 text-slate-500";
-                  } else if (isSel) style = "border-sky-400/60 bg-sky-500/15 text-sky-100";
+                  } else if (isSel) style = "border-orange-400/60 bg-orange-500/15 text-orange-100";
                   return (
                     <button key={c} onClick={() => handleSelect(c)} disabled={revealed}
                       className={`w-full text-left flex gap-3 items-start rounded-xl border px-4 py-3 text-sm transition-all ${style} disabled:cursor-default`}>
@@ -133,8 +133,8 @@ export default function Questions7Page() {
                 })}
               </div>
               {revealed && (
-                <div className="mt-5 rounded-xl border border-sky-400/25 bg-sky-500/8 p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-sky-300 mb-1">Explanation</p>
+                <div className="mt-5 rounded-xl border border-orange-400/25 bg-orange-500/8 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-orange-300 mb-1">Explanation</p>
                   <p className="text-sm text-slate-200 leading-relaxed">{current.explanation}</p>
                 </div>
               )}
@@ -144,18 +144,18 @@ export default function Questions7Page() {
                 className="rounded-xl border border-white/10 px-4 py-2 text-sm text-slate-300 transition hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed">← Prev</button>
               {!revealed ? (
                 <button onClick={handleReveal} disabled={!selected}
-                  className="flex-1 rounded-xl bg-sky-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-500 disabled:opacity-30 disabled:cursor-not-allowed">Check Answer</button>
+                  className="flex-1 rounded-xl bg-orange-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-orange-500 disabled:opacity-30 disabled:cursor-not-allowed">Check Answer</button>
               ) : (
                 <button onClick={handleNext} disabled={quizIndex===filtered.length-1}
-                  className="flex-1 rounded-xl bg-cyan-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyan-500 disabled:opacity-30 disabled:cursor-not-allowed">Next Question →</button>
+                  className="flex-1 rounded-xl bg-amber-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-amber-500 disabled:opacity-30 disabled:cursor-not-allowed">Next Question →</button>
               )}
             </div>
             {quizIndex===filtered.length-1 && revealed && (
               <div className={`rounded-2xl border p-6 text-center ${pct>=70?"border-emerald-400/40 bg-emerald-500/10":"border-red-400/40 bg-red-500/10"}`}>
                 <p className="text-2xl font-bold mb-1">{pct>=70?"🎉 Great work!":"📚 Keep studying!"}</p>
-                <p className="text-slate-300 text-sm">Final score: <strong>{score}</strong> / {answered} ({pct}%) on {filter==="All"?"all Set 7 questions":filter}</p>
+                <p className="text-slate-300 text-sm">Final score: <strong>{score}</strong> / {answered} ({pct}%) on {filter==="All"?"all Set 9 questions":filter}</p>
                 <button onClick={() => {setQuizIndex(0);setSelected(null);setRevealed(false);setScore(0);setAnswered(0);}}
-                  className="mt-4 rounded-xl bg-slate-700 px-5 py-2 text-sm font-semibold hover:bg-slate-600 transition">Restart Set 7</button>
+                  className="mt-4 rounded-xl bg-slate-700 px-5 py-2 text-sm font-semibold hover:bg-slate-600 transition">Restart Set 9</button>
               </div>
             )}
           </div>
@@ -189,8 +189,8 @@ export default function Questions7Page() {
                         </div>
                       ))}
                     </div>
-                    <div className="rounded-xl border border-sky-400/20 bg-sky-500/8 p-3">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-sky-300 mb-1">Why</p>
+                    <div className="rounded-xl border border-orange-400/20 bg-orange-500/8 p-3">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-orange-300 mb-1">Why</p>
                       <p className="text-sm text-slate-200 leading-relaxed">{q.explanation}</p>
                     </div>
                   </div>

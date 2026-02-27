@@ -80,7 +80,7 @@ export default function Home() {
             <p className="mt-2 text-xs text-slate-300">
               Scroll or click to jump section.
             </p>
-            <nav className="mt-4 max-h-[70vh] overflow-y-auto pr-1">
+            <nav className="mt-4 space-y-4 pr-1">
               <ul className="space-y-2">
                 {sections.map((section) => (
                   <li key={section.id}>
@@ -101,7 +101,7 @@ export default function Home() {
               {/* Divider */}
               <div className="my-4 border-t border-white/10" />
 
-              {/* Practice questions buttons */}
+              {/* Practice questions buttons (Sets 1–10) */}
               <Link
                 href="/questions"
                 className="flex items-center gap-2 rounded-xl border border-amber-400/40 bg-amber-500/10 px-3 py-2.5 text-sm font-semibold text-amber-200 transition hover:bg-amber-500/20 hover:border-amber-400/60"
@@ -157,6 +157,30 @@ export default function Home() {
                 <span className="text-base">📝</span>
                 <span>Set 7 — 100 Q&amp;A</span>
                 <span className="ml-auto text-sky-400/70">→</span>
+              </Link>
+              <Link
+                href="/questions8"
+                className="flex items-center gap-2 rounded-xl border border-rose-400/40 bg-rose-500/10 px-3 py-2.5 text-sm font-semibold text-rose-200 transition hover:bg-rose-500/20 hover:border-rose-400/60"
+              >
+                <span className="text-base">📝</span>
+                <span>Set 8 — 100 Q&amp;A</span>
+                <span className="ml-auto text-rose-400/70">→</span>
+              </Link>
+              <Link
+                href="/questions9"
+                className="flex items-center gap-2 rounded-xl border border-orange-400/40 bg-orange-500/10 px-3 py-2.5 text-sm font-semibold text-orange-200 transition hover:bg-orange-500/20 hover:border-orange-400/60"
+              >
+                <span className="text-base">📝</span>
+                <span>Set 9 — 100 Q&amp;A</span>
+                <span className="ml-auto text-orange-400/70">→</span>
+              </Link>
+              <Link
+                href="/questions10"
+                className="flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-emerald-500/10 px-3 py-2.5 text-sm font-semibold text-emerald-200 transition hover:bg-emerald-500/20 hover:border-emerald-400/60"
+              >
+                <span className="text-base">🎓</span>
+                <span>Set 10 — Final 100 Q&amp;A</span>
+                <span className="ml-auto text-emerald-400/70">→</span>
               </Link>
             </nav>
           </div>
